@@ -17,7 +17,7 @@
    $ts = $date->getTimestamp();
 
   
-$sql = 'INSERT INTO commentFeed (eventName, firstName, lastName, fullName, location, comment, timeStamp, imageUpload) 
+$sql = 'INSERT INTO public."commentFeed" (eventName, firstName, lastName, fullName, location, comment, timeStamp, imageUpload) 
        VALUES ("2I79C1", "null", "null", "null", "null", "this is a test comment" , "' . $ts . '", "null")';
 $result = pg_query($db, $sql);
 if(!$result){
