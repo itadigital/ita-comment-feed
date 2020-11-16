@@ -11,22 +11,6 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// id, eventName, firstName, lastName, fullName, location, comment, timeStamp, imageUpload
-
-$date = new DateTime();
-
-$sql = "INSERT INTO commentFeed (eventName, comment, timeStamp)
-VALUES ('2I79C1', 'this is a test comment', '" . $date->getTimestamp(); . "')";
-
-if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
-} else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
-}
 
 $conn->close();
 ?>
-
-
-
-
