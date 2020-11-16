@@ -16,12 +16,15 @@
    $date = new DateTime();
    $ts = $date->getTimestamp();
 
-$sql = 'INSERT INTO commentFeed (eventName, comment, timeStamp) 
-       VALUES ("2I79C1", "this is a test comment" , "' . $ts . '")';
-    $stmt = $this->pdo->prepare($sql);
-
-   
-    echo "Operation done successfully\n";
+  
+$sql = 'INSERT INTO commentFeed (eventName, firstName, lastName, fullName, location, comment, timeStamp, imageUpload) 
+       VALUES ("2I79C1", "", "", "", "", "this is a test comment" , "' . $ts . '", "")';
+$result = pg_query($db, $sql);
+if(!$result){
+  echo pg_last_error($db);
+} else {
+  echo "Inserted successfully";
+}
 
     pg_close($db);
 ?>
