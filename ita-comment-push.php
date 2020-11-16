@@ -21,20 +21,6 @@
        VALUES ('2I79C1', 'this is a test comment' , $ts );
     EOF;
 
-    $ret = pg_query($db, $sql);
-
-    if(!$ret) {
-      echo pg_last_error($db);
-      exit;
-    } 
-   
-    while($row = pg_fetch_row($ret)) {
-      echo "id = ". $row[8] . "\n";
-      echo "eventName = ". $row[0] ."\n";
-      echo "comment = ". $row[5] ."\n";
-      echo "timeStamp =  ".$row[6] ."\n\n";
-    }
-   
     echo "Operation done successfully\n";
 
     pg_close($db);
