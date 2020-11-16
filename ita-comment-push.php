@@ -16,6 +16,10 @@
    $date = new DateTime();
    $ts = $date->getTimestamp();
 
+$sql = 'INSERT INTO commentFeed (eventName, comment, timeStamp) 
+       VALUES ("2I79C1", "this is a test comment" , "' . $ts . '")';
+    $stmt = $this->pdo->prepare($sql);
+
    
     echo "Operation done successfully\n";
 
