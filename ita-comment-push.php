@@ -13,12 +13,10 @@
 
    // id, eventName, firstName, lastName, fullName, location, comment, timeStamp, imageUpload
 
+   $date = new DateTime();
+   $ts = $date->getTimestamp();
 
-   $sql =<<<EOF 
-       INSERT INTO commentFeed (eventName, comment, timeStamp) 
-       VALUES ('2I79C1', 'this is a test comment' , '11111111' );
-    EOF;
-
+   
     echo "Operation done successfully\n";
 
     pg_close($db);
