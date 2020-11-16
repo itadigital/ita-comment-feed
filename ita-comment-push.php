@@ -18,7 +18,7 @@
 
   
 $sql = 'INSERT INTO commentFeed (eventName, firstName, lastName, fullName, location, comment, timeStamp, imageUpload) 
-       VALUES ("2I79C1", "", "", "", "", "this is a test comment" , "' . $ts . '", "")';
+       VALUES ("2I79C1", "", "", "", "", "this is a test comment" , "", "")';
 $result = pg_query($db, $sql);
 if(!$result){
   echo pg_last_error($db);
