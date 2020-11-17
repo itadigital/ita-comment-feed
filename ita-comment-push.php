@@ -36,15 +36,7 @@
     $time = date("h:i:s");
     $ts = $today . " " . $time;
   
-    $sql = 'INSERT INTO public."commentFeed" ("eventName", "firstName", "lastName", "fullName", "location", comment", "timeStamp", "imageUpload") VALUES
-        (\'' . $eventName . '\', 
-        \'' . $firstName . '\', 
-        \'' . $lastName . '\', 
-        \'' . $fullName . '\', 
-        \'' . $location . '\', 
-        \'' . $comment . '\', 
-        \'' . $ts . '\', 
-        \'' . $imageUpload . '\')';
+    $sql = 'INSERT INTO public."commentFeed" ("eventName", "firstName", "lastName", "fullName", "location", comment", "timeStamp", "imageUpload") VALUES (\'' . $eventName . '\', \'' . $firstName . '\', \'' . $lastName . '\', \'' . $fullName . '\', \'' . $location . '\', \'' . $comment . '\', \'' . $ts . '\', \'' . $imageUpload . '\')';
     $result = pg_query($db, $sql);
 
     if(!$result){
