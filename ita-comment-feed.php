@@ -33,7 +33,7 @@
 
 
     $rows = array();
-    while($r = mysqli_fetch_assoc($result)) {
+    while($r = pg_fetch_row($result)) {
         $rows[] = $r;
     }
     print json_encode($rows);
