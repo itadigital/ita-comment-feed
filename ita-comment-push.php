@@ -10,10 +10,15 @@
 
     $db = pg_connect( "$host $port $dbname $credentials" );
     if(!$db) {
-    echo "Error : Unable to open database\n";
-    } else {
-    echo "Opened database successfully\n";
-    }
+        //echo "Error : Unable to open database. ";
+        $return = array(
+            'status' => 500,
+            'message' => "Error : Unable to open database."
+        );
+        http_response_code(500);
+        
+        print_r(json_encode($return));
+    } 
 
     // id, eventName, firstName, lastName, fullName, location, comment, timeStamp, imageUpload
 
@@ -30,10 +35,20 @@
     $result = pg_query($db, $sql);
 
     if(!$result){
-      echo pg_last_error($db);
+        $return = array(
+            'status' => 500,
+            'message' => pg_last_error($db)
+        );
+        http_response_code(500);
     } else {
-      echo "Inserted successfully";
+      $return = array(
+            'status' => 200,
+            'message' => "Submission successful."
+        );
+        http_response_code(200);
     }
+
+    print_r(json_encode($return));
 
     pg_close($db);
 ?>
