@@ -28,9 +28,8 @@
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $fullName = $_POST['fullName'];
-    $location = $_POST['location'];
-    $comment = $_POST['comment'];
-    $comment = pg_escape_string($comment);
+    $location = pg_escape_string($_POST['location']);
+    $comment = pg_escape_string($_POST['comment']);
     $imageUpload = $_POST['imageUpload'];
 
     $today = date("Y-m-d");
