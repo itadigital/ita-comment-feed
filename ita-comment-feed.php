@@ -29,24 +29,7 @@
     $sql = 'SELECT comment FROM public."commentFeed" WHERE "eventName"=\'' . $eventName . '\'';
     $result = pg_query($db, $sql);
 
-    if(!$result){
-        $return = array(
-            'status' => 500,
-            'message' => pg_last_error($db)
-        );
-        http_response_code(500);
-        
-        print_r(json_encode($return));
-    } else {
-      $return = array(
-            'status' => 200,
-            'message' => "Submission successful."
-        );
-        http_response_code(200);
-        
-        print_r(json_encode($result));
-    }
-
+    echo json_encode($result);
 
     pg_close($db);
 ?>
