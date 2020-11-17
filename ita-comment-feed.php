@@ -29,7 +29,9 @@
     $sql = 'SELECT comment FROM public."commentFeed" WHERE "eventName"=\'' . $eventName . '\'';
     $result = pg_query($db, $sql);
 
-    echo json_encode($result);
+    //echo json_encode($result);
+
+    echo "you made it";
 
     pg_close($db);
 ?>
