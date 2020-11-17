@@ -31,7 +31,13 @@
 
     //echo json_encode($result);
 
-    echo "you made it";
+
+    $rows = array();
+    while($r = mysqli_fetch_assoc($result)) {
+        $rows[] = $r;
+    }
+    print json_encode($rows);
+
 
     pg_close($db);
 ?>
