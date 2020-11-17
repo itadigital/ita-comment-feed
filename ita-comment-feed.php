@@ -26,7 +26,7 @@
     //Create variables
     $eventName = $_GET['eventName'];
 
-    $sql = 'SELECT comment FROM public."commentFeed" WHERE "eventName"=\'' . $eventName . '\'';
+    $sql = 'SELECT id, eventName, firstName, lastName, fullName, location, comment, timeStamp, imageUpload FROM public."commentFeed" WHERE "eventName"=\'' . $eventName . '\'';
     $result = pg_query($db, $sql);
 
     //echo json_encode($result);
@@ -37,7 +37,6 @@
         $rows[] = $r;
     }
     print json_encode($rows);
-
 
     pg_close($db);
 ?>
