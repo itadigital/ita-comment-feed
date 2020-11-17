@@ -15,12 +15,16 @@
 
     // id, eventName, firstName, lastName, fullName, location, comment, timeStamp, imageUpload
 
+    //Create variables
+    $eventName = $_POST['eventName'];
+    $comment = $_POST['comment'];
+
     $today = date("Y-m-d");
     $time = date("h:i:s");
     $ts = $today . " " . $time;
   
     $sql = 'INSERT INTO public."commentFeed" ("eventName", "comment", "timeStamp") VALUES
-        (\'2I79C1\', \'This is a comment\', \'' . $ts . '\')';
+        (\'' . $eventName . '\', \'' . $comment . '\', \'' . $ts . '\')';
     $result = pg_query($db, $sql);
 
     if(!$result){
