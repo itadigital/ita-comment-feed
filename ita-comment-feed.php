@@ -24,7 +24,7 @@
     // id, eventName, firstName, lastName, fullName, location, comment, timeStamp, imageUpload
   
     //Create variables
-    $eventName = $_POST['eventName'];
+    $eventName = $_GET['eventName'];
 
     $sql = 'SELECT comment FROM public."commentFeed" WHERE "eventName"=\'' . $eventName . '\'';
     $result = pg_query($db, $sql);
