@@ -1,4 +1,6 @@
 <?php
+    header('Access-Control-Allow-Origin: *');
+
     date_default_timezone_set('America/Chicago');
 
     $host = "host=ec2-34-237-166-54.compute-1.amazonaws.com";
