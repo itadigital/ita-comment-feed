@@ -25,8 +25,9 @@
   
     //Create variables
     $eventName = $_GET['eventName'];
+    $category = $_GET['category'];
 
-    $sql = 'SELECT * FROM public."commentFeed" WHERE "eventName"=\'' . $eventName . '\'';
+    $sql = 'SELECT * FROM public."commentFeed" WHERE "eventName"=\'' . $eventName . '\' AND "category"=\'' . $category . '\'';
     $result = pg_query($db, $sql);
 
     //echo json_encode($result);
