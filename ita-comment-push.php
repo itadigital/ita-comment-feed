@@ -25,7 +25,7 @@
 
     //Create variables
     $eventName = $_POST['eventName'];
-    $category = $_POST['category'];
+    $category = pg_escape_string($_POST['category']);
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $fullName = $_POST['fullName'];
