@@ -25,6 +25,7 @@
 
     //Create variables
     $eventName = $_POST['eventName'];
+    $category = $_POST['category'];
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $fullName = $_POST['fullName'];
@@ -36,7 +37,7 @@
     $time = date("h:i:s");
     $ts = $today . " " . $time;
   
-    $sql = 'INSERT INTO public."commentFeed" ("eventName", "firstName", "lastName", "fullName", "location", "comment", "timeStamp", "imageUpload") VALUES (\'' . $eventName . '\', \'' . $firstName . '\', \'' . $lastName . '\', \'' . $fullName . '\', \'' . $location . '\', \'' . $comment . '\', \'' . $ts . '\', \'' . $imageUpload . '\')';
+    $sql = 'INSERT INTO public."commentFeed" ("eventName", "firstName", "lastName", "fullName", "location", "comment", "timeStamp", "imageUpload", "category") VALUES (\'' . $eventName . '\', \'' . $firstName . '\', \'' . $lastName . '\', \'' . $fullName . '\', \'' . $location . '\', \'' . $comment . '\', \'' . $ts . '\', \'' . $imageUpload . '\', \'' . $category . '\')';
     $result = pg_query($db, $sql);
 
     if(!$result){
