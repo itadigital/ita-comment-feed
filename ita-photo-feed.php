@@ -26,7 +26,7 @@
     //Create variables
     $eventName = $_GET['eventName'];
 
-    $sql = 'SELECT * FROM public."photoStream" WHERE "eventName"=\'' . $eventName . '\'';
+    $sql = 'SELECT * FROM public."photoStream" WHERE "eventName"=\'' . $eventName . '\' ORDER BY "id" DESC';
     $result = pg_query($db, $sql);
 
     //echo json_encode($result);
